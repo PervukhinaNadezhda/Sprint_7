@@ -3,9 +3,6 @@ import courier.CourierGenerator;
 import courier.CourierLogin;
 import courier.CourierMethods;
 import io.qameta.allure.Description;
-import io.restassured.RestAssured;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
@@ -23,7 +20,7 @@ public class CourierLoginPostTests {
     public void createTestData() {
         courierMethods = new CourierMethods();
         courier = CourierGenerator.random();
-        courierMethods.create(courier);
+        Response response = courierMethods.create(courier);
     }
 
     @After
