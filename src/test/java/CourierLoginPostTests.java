@@ -20,7 +20,7 @@ public class CourierLoginPostTests {
     public void createTestData() {
         courierMethods = new CourierMethods();
         courier = CourierGenerator.random();
-        Response response = courierMethods.create(courier);
+        courierMethods.create(courier);
     }
 
     @After

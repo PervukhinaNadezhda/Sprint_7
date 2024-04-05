@@ -39,7 +39,7 @@ public class CourierPostTests {
             "Проверяется код ответа. " +
             "Проверяется текст ошибки в теле ответа.")
     public void sameCourierCantBeCreated() {
-        Response responseFirst = courierMethods.create(courier);
+        courierMethods.create(courier);
         Response responseSecond = courierMethods.create(courier);
 
         responseSecond.then().assertThat().body("message", equalTo("Этот логин уже используется. Попробуйте другой."))
